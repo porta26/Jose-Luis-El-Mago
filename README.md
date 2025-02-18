@@ -20,7 +20,7 @@ Este juego ha sido desarrollado íntegramente por **Daniel Portasany Codina**.
     git clone https://github.com/porta26/Jose-Luis-El-Mago.git
     ```
 
-2. Abre el proyecto con Unity Hub. Asegúrate de tener instalada la versión de Unity compatible (indicado en el archivo `ProjectSettings/ProjectVersion.txt`).
+2. Abre el proyecto con Unity Hub. Asegúrate de tener instalada la versión de Unity compatible.
 
 3. Una vez cargado el proyecto, puedes empezar a jugar desde el editor de Unity o construir el juego para tu plataforma preferida.
 
@@ -37,10 +37,6 @@ Para ejecutar el juego, abre el archivo `MainScene` en Unity y haz clic en el bo
 ## Contribuciones
 
 Este es un proyecto personal, pero si deseas contribuir, no dudes en hacer un fork del repositorio y enviar pull requests con nuevas ideas o mejoras. Si tienes alguna sugerencia, ¡estaré encantado de escucharla!
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Créditos
 
