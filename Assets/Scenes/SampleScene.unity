@@ -430,6 +430,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 4
   fuerzaSalto: 5
+  disparoPrefab: {fileID: 3489607901830604823, guid: dbab970e447634504938b8051c86c19c, type: 3}
+  projectileSpeed: 10
+  mainCamera: {fileID: 519420031}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
