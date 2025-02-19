@@ -7,6 +7,7 @@ public class JugadorController : MonoBehaviour
     [SerializeField] float fuerzaSalto = 5.0f;
     [SerializeField] GameObject disparoPrefab;
     [SerializeField] float projectileSpeed = 10.0f;
+    [SerializeField] float projectileLife = 2.0f;
     [SerializeField] Camera mainCamera;
     Rigidbody2D rb;
     bool isGrounded = false; // Variable para saber si el jugador está en el suelo
@@ -57,13 +58,19 @@ public class JugadorController : MonoBehaviour
         GameObject projectile = Instantiate(disparoPrefab, transform.position, Quaternion.identity);
         // Obtener la dirección del disparo    
         Vector3 targetPos = mainCamera.ScreenToWorldPoint(mouse);
-        Vector3 direction = (targetPos - transform.position).normalized;
+        Vector3 direction = (targetPos - transform.position);
+
+        // Normalizar la dirección
+        direction = direction/Mathf.Sqrt(direction.x*direction.x + direction.y*direction.y);
+
 
         // Aplicar velocidad al proyectil
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.linearVelocity = direction * projectileSpeed;
+            projectile.transform.Rotate(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+            Destroy(projectile, projectileLife);
         }
     }
 }
