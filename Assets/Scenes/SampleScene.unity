@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 309976991}
   - component: {fileID: 309976995}
   - component: {fileID: 309976996}
+  - component: {fileID: 309976998}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -310,7 +311,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -343,7 +344,7 @@ Animator:
   m_GameObject: {fileID: 309976990}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a01e72b508fa74d018914c00170bad82, type: 2}
+  m_Controller: {fileID: 9100000, guid: f0d6055044c3e52c290d6d8d0a92399c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -410,6 +411,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &309976998
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309976990}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.29, y: 0.32}
+    newSize: {x: 0.29, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.051007748, y: 0.09867572}
+      - {x: 0.018563777, y: 0.12}
+      - {x: 0.024999999, y: 0.16}
+      - {x: -0.030112002, y: 0.15755597}
+      - {x: -0.056119718, y: 0.05067184}
+      - {x: -0.056895226, y: -0.04144195}
+      - {x: -0.145, y: -0.11}
+      - {x: -0.145, y: -0.16}
+      - {x: 0.051903576, y: -0.15022394}
+      - {x: 0.047489658, y: -0.10966648}
+      - {x: 0.083635606, y: -0.108910225}
+      - {x: 0.08655456, y: -0.09180509}
+      - {x: 0.048987634, y: -0.0887259}
+      - {x: 0.043062136, y: 0.027669676}
+      - {x: 0.079011664, y: 0.07179157}
+  m_UseDelaunayMesh: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
