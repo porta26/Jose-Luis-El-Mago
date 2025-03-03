@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3489607901830604823
+--- !u!1 &983925350425125513
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6091871156856175648}
-  - component: {fileID: 6733555740650368044}
-  - component: {fileID: 3873950092677241642}
-  - component: {fileID: 7370953706779119719}
-  - component: {fileID: -2133549603946265575}
+  - component: {fileID: 1289813882083759903}
+  - component: {fileID: 7690343033692500682}
+  - component: {fileID: 6293248164469145222}
+  - component: {fileID: 7503429152729879715}
+  - component: {fileID: 6532788178349428257}
   m_Layer: 0
-  m_Name: Disparo1
-  m_TagString: Damage
+  m_Name: Demonio
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6091871156856175648
+--- !u!4 &1289813882083759903
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3489607901830604823}
+  m_GameObject: {fileID: 983925350425125513}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.01, y: -0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 1.5859433, y: -0.23213477, z: 0.059661016}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6733555740650368044
+--- !u!212 &7690343033692500682
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3489607901830604823}
+  m_GameObject: {fileID: 983925350425125513}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -78,26 +78,26 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 4777144408696265305, guid: e37bf24bd4217af47bdfd220ad970565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 0.18, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3873950092677241642
+--- !u!50 &6293248164469145222
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3489607901830604823}
+  m_GameObject: {fileID: 983925350425125513}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -116,14 +116,14 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!68 &7370953706779119719
-EdgeCollider2D:
+  m_Constraints: 4
+--- !u!60 &7503429152729879715
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3489607901830604823}
+  m_GameObject: {fileID: 983925350425125513}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -147,28 +147,66 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.18, y: 0.32}
+    newSize: {x: 0.18, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!114 &-2133549603946265575
+    m_Paths:
+    - - {x: 0.020085558, y: 0.16043615}
+      - {x: 0.008045582, y: 0.16158932}
+      - {x: 0.009524055, y: 0.13146032}
+      - {x: 0.027702397, y: 0.11197589}
+      - {x: -0.020475874, y: 0.11162149}
+      - {x: -0.040636867, y: 0.16056274}
+      - {x: -0.054114666, y: 0.16117737}
+      - {x: -0.051155973, y: 0.13103248}
+      - {x: -0.029263306, y: 0.10830436}
+      - {x: -0.030641686, y: 0.03238197}
+      - {x: -0.019439746, y: 0.028723827}
+      - {x: -0.020723434, y: 0.013219393}
+      - {x: -0.069555454, y: 0.010567116}
+      - {x: -0.07041852, y: -0.001131522}
+      - {x: -0.08008636, y: -0.0027266424}
+      - {x: -0.07868387, y: -0.031381443}
+      - {x: -0.020706661, y: -0.032474693}
+      - {x: -0.01949717, y: -0.07019986}
+      - {x: -0.038342804, y: -0.1019375}
+      - {x: -0.012890421, y: -0.15273519}
+      - {x: 0.01074677, y: -0.15127061}
+      - {x: -0.00062232465, y: -0.10464455}
+      - {x: 0.018830009, y: -0.059828725}
+      - {x: 0.04876171, y: -0.06380634}
+      - {x: 0.040359404, y: -0.090265736}
+      - {x: 0.040533505, y: -0.1614549}
+      - {x: 0.06915874, y: -0.15824315}
+      - {x: 0.08096895, y: -0.12860481}
+      - {x: 0.08104335, y: 0.03871442}
+      - {x: 0.050318427, y: 0.0408767}
+      - {x: 0.05144525, y: 0.11108633}
+      - {x: 0.04272553, y: 0.11489818}
+  m_UseDelaunayMesh: 0
+--- !u!114 &6532788178349428257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3489607901830604823}
+  m_GameObject: {fileID: 983925350425125513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfd4a7902764d4141865927da2f46414, type: 3}
+  m_Script: {fileID: 11500000, guid: 43844cd2d0af58846a89f3fee7927e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  demonioSpeed: 1
+  jugador: {fileID: 0}

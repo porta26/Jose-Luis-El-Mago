@@ -7,6 +7,8 @@ TagManager:
   - Suelo
   - Damage
   - Enemigo
+  - Escudo
+  - Limite
   layers:
   - Default
   - TransparentFX
