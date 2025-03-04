@@ -14,7 +14,7 @@ public class JugadorController : MonoBehaviour
     float cooldown2Counter=0;
     [SerializeField] GameObject escudo;
     [SerializeField] float escudoActivo = 2;
-    [SerializeField] float cooldownEscudo = 5;
+    [SerializeField] float cooldownEscudo = 8;
     float cooldownEscudoCounter = 0;
     [SerializeField] float projectileSpeed = 10.0f;
     [SerializeField] float projectileLife = 2.0f;
@@ -120,6 +120,7 @@ public class JugadorController : MonoBehaviour
     IEnumerator Escudo()
     {
         escudo.SetActive(true);
+        escudo.transform.position = transform.position;
         yield return new WaitForSeconds(escudoActivo);
         escudo.SetActive(false);
         cooldownEscudoCounter = Time.time;
