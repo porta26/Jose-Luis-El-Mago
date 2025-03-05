@@ -108,6 +108,19 @@ public class JugadorController : MonoBehaviour
             }
         }
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyDamage"))
+        {
+            vidas--;
+            Debug.Log("Daño, Vidas restantes: " + vidas);
+            StartCoroutine(PerderVida());
+            if (vidas <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
     void Shoot1(Vector3 mouse)
     {
         // Crear el proyectil
