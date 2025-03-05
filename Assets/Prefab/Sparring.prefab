@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 983925350425125513, guid: 1ad93b61d1c5d24f4b30bde6bc57e2b0, type: 3}
       propertyPath: m_Name
-      value: Sparring Variant
+      value: Sparring
+      objectReference: {fileID: 0}
+    - target: {fileID: 983925350425125513, guid: 1ad93b61d1c5d24f4b30bde6bc57e2b0, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1289813882083759903, guid: 1ad93b61d1c5d24f4b30bde6bc57e2b0, type: 3}
       propertyPath: m_LocalPosition.x

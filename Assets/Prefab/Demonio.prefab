@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6293248164469145222}
   - component: {fileID: 7503429152729879715}
   - component: {fileID: 6532788178349428257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Demonio
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
