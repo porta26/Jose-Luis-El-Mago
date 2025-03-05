@@ -10,6 +10,7 @@ TagManager:
   - Escudo
   - Limite
   - Torre
+  - EnemyDamage
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - UI
   - Suelo
   - Enemigo
-  - 
-  - 
+  - Aliado
+  - DisparoAliado
   - 
   - 
   - 

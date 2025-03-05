@@ -26,8 +26,6 @@ public class Shoot2Controller : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.CompareTag("Player") && !col.CompareTag("Escudo"))
-        {
             rb.mass = 0;
             rb.gravityScale = 0;
             rb.linearVelocity = Vector2.zero;
@@ -36,7 +34,7 @@ public class Shoot2Controller : MonoBehaviour
             transform.localScale = new Vector3(2, 2, 1f);
             CambiarRadio(1, 3);
             sp.color = Color.yellow;
-        }
+        
     }
     public void CambiarRadio(float radioInterior, float radioExterior)
     {

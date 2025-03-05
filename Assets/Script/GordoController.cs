@@ -3,6 +3,7 @@ using UnityEngine;
 public class GordoController : MonoBehaviour
 {
     [SerializeField] float gordoSpeed = 1;
+    [SerializeField] float vida = 15;
     Vector2 movimiento = Vector2.left;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +26,17 @@ public class GordoController : MonoBehaviour
             Debug.Log("Giro");
             movimiento *= -1;
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Damage"))
+        {
+            vida--;
+            if (vida <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

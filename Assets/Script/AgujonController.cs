@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shoot1Controlller : MonoBehaviour
+public class AgujonController : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,7 +13,6 @@ public class Shoot1Controlller : MonoBehaviour
     {
 
     }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);

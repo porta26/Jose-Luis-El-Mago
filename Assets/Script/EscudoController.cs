@@ -18,18 +18,16 @@ public class EscudoController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Damage") && !collision.CompareTag("Player"))
+        Debug.Log("Algo toco");
+        Vector3 impulso = -(jugador.transform.position - collision.transform.position);
+        impulso += Vector3.up;
+
+        if (collision.GetComponent<Rigidbody2D>() != null)
         {
-            Debug.Log("Algo toco");
-            Vector3 impulso = -(jugador.transform.position - collision.transform.position);
-            impulso += Vector3.up;
-
-            if (collision.GetComponent<Rigidbody2D>() != null)
-            {
-                Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
-                rb.AddForce(impulso * fuerzaImpulso);
-            }
-
+            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+            rb.AddForce(impulso * fuerzaImpulso);
         }
+
     }
 }
+

@@ -24,9 +24,11 @@ public class JugadorController : MonoBehaviour
     float cooldownTorreCounter = 0;
     [SerializeField] float projectileSpeed = 10.0f;
     [SerializeField] float projectileLife = 2.0f;
+    [SerializeField] float vidas = 3;
     [SerializeField] Camera mainCamera;
     Rigidbody2D rb;
     bool isGrounded = false; // Variable para saber si el jugador está en el suelo
+    bool inmune = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -85,13 +87,25 @@ public class JugadorController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Torre"))
         {
             Debug.Log("Estoy en el suelo");
             isGrounded = true;
+        }
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemigo") && !inmune)
+        {
+            vidas--;
+            Debug.Log("Daño, Vidas restantes: " + vidas);
+            StartCoroutine(PerderVida());
+            if (vidas <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     void Shoot1(Vector3 mouse)
@@ -161,5 +175,19 @@ public class JugadorController : MonoBehaviour
         // Esperar 2 segundos antes de destruir
         yield return new WaitForSeconds(torreActiva);
         Destroy(torreInstancia);
+    }
+    IEnumerator PerderVida()
+    {
+        inmune = true;
+        Debug.Log("Animacion de perder vida");
+        SpriteRenderer sp = GetComponent<SpriteRenderer>();
+        float empiezaAnimacion = Time.time;
+        while (Time.time < empiezaAnimacion + 1)
+        {
+            sp.enabled = !sp.enabled;
+            yield return new WaitForSeconds(0.1f);
+        }
+        sp.enabled = true;
+        inmune = false;
     }
 }
