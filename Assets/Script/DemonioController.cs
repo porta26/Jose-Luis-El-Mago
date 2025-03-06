@@ -5,6 +5,7 @@ public class DemonioController : MonoBehaviour
 
     [SerializeField] float demonioSpeed;
     [SerializeField] GameObject jugador;
+    [SerializeField] float puntuacion;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +37,7 @@ public class DemonioController : MonoBehaviour
         if (collision.CompareTag("Damage"))
         {
             Destroy(gameObject);
+            GameManager.instancia.SumarPuntuacion(puntuacion);
         }
     }
 }

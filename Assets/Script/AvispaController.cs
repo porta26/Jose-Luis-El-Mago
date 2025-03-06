@@ -12,6 +12,7 @@ public class AvispaController : MonoBehaviour
     [SerializeField] float projectileLife = 2;
     [SerializeField] GameObject jugador;
     [SerializeField] GameObject disparo;
+    [SerializeField] float puntuacion = 5;
     Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +32,7 @@ public class AvispaController : MonoBehaviour
         if (collision.CompareTag("Damage"))
         {
             Destroy(gameObject);
+            GameManager.instancia.SumarPuntuacion(puntuacion);
         }
     }
     IEnumerator Mover()

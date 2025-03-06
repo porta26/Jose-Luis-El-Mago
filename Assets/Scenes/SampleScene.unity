@@ -155,6 +155,9 @@ MonoBehaviour:
   avispaSpawnRate: 90
   gordoSpawnRate: 100
   spawnRate: 2
+  escalaDificultad: 100
+  spawnRateMinimo: 0.2
+  spawnRateMaximo: 20
   spawnLeft: {x: -7, y: 0, z: 0}
   spawnRight: {x: 7, y: 0, z: 0}
 --- !u!4 &131714525
@@ -1087,6 +1090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1312121503}
+  - component: {fileID: 1312121504}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1109,6 +1113,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1312121504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312121502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b9afaad3b15778c8a913c62c53f198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntuacionMulti: 1
 --- !u!1 &1313727882
 GameObject:
   m_ObjectHideFlags: 0

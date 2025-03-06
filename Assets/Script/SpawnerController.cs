@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnerController : MonoBehaviour
@@ -10,6 +11,10 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] float avispaSpawnRate = 90f;
     [SerializeField] float gordoSpawnRate = 100f;
     [SerializeField] float spawnRate = 2;
+    [SerializeField] float escalaDificultad = 100;
+    [SerializeField] float spawnRateMinimo = 0.2f;
+    [SerializeField] float spawnRateMaximo = 50f;
+    //campaña y le dan por culo a la charla
     float contador;
     [SerializeField] Vector3 spawnLeft;
     [SerializeField] Vector3 spawnRight;
@@ -22,7 +27,7 @@ public class SpawnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > contador + spawnRate)
+        if (Time.time > contador + CalcularSpawnRate())
         {
             SpawnEnemigo();
             contador = Time.time;
@@ -39,19 +44,31 @@ public class SpawnerController : MonoBehaviour
 
         float enemigo = Random.Range(0, 101);
         Debug.Log("Enemigo: " + enemigo);
-        
+
         if (enemigo < demonioSpawnRate) // 60% de probabilidad
         {
-            Instantiate(demonioPrefab,spawnPoint,Quaternion.identity);
+            Instantiate(demonioPrefab, spawnPoint, Quaternion.identity);
         }
         else if (enemigo < avispaSpawnRate) // 30% de probabilidad
         {
-            Instantiate(avispaPrefab,spawnPoint,Quaternion.identity);
+            Instantiate(avispaPrefab, spawnPoint, Quaternion.identity);
         }
         else // 10% de probabilidad
         {
-            Instantiate(gordoPrefab,spawnPoint,Quaternion.identity);
+            Instantiate(gordoPrefab, spawnPoint, Quaternion.identity);
         }
 
+    }
+    /*
+    Esto es una funcion racional para representar el escalado de dificultad del juego.
+        float spawnRate:                        el ángulo de la curva (cuanto menor mas rapido escala la dificultad)
+        float spawnRateMaximo:                  desplazamiento en x (cuanto mayor mas enemigos al inicio)
+        float spawnRateMinimo:                  desplazamiento en y (cuanto mayor menos enemigos al final)
+        float escalaDificultad:                 lo mismo que el spawnRate (creo)
+        GameManager.instancia.GetPuntuacion():  la puntuacion
+    */
+    float CalcularSpawnRate()
+    {
+        return (spawnRate / ((GameManager.instancia.GetPuntuacion() + spawnRateMaximo) / escalaDificultad)) + spawnRateMinimo;
     }
 }

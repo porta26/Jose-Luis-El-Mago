@@ -5,6 +5,7 @@ public class GordoController : MonoBehaviour
     [SerializeField] float gordoSpeed = 1;
     [SerializeField] float vida = 15;
     Vector2 movimiento = Vector2.left;
+    [SerializeField] float puntuacion = 10;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,6 +37,7 @@ public class GordoController : MonoBehaviour
             if (vida <= 0)
             {
                 Destroy(gameObject);
+                GameManager.instancia.SumarPuntuacion(puntuacion);
             }
         }
     }
