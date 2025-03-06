@@ -191,3 +191,4 @@ MonoBehaviour:
   projectileLife: 2
   jugador: {fileID: 0}
   disparo: {fileID: 2218183972472818287, guid: e67cd57c52498e747957c6bc24d86181, type: 3}
+  puntuacion: 2

@@ -1,4 +1,5 @@
 
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,13 +9,13 @@ public class SpawnerController : MonoBehaviour
     [SerializeField] GameObject gordoPrefab;
     [SerializeField] GameObject avispaPrefab;
     [SerializeField] float demonioSpawnRate = 60f;
-    [SerializeField] float avispaSpawnRate = 90f;
-    [SerializeField] float gordoSpawnRate = 100f;
+    [SerializeField] float avispaSpawnRate = 70f;
+    [SerializeField] float gordoPuntuacion = 30f;
+    float gordoUltimoSpawn = 0;
     [SerializeField] float spawnRate = 2;
     [SerializeField] float escalaDificultad = 100;
     [SerializeField] float spawnRateMinimo = 0.2f;
     [SerializeField] float spawnRateMaximo = 50f;
-    //campaña y le dan por culo a la charla
     float contador;
     [SerializeField] Vector3 spawnLeft;
     [SerializeField] Vector3 spawnRight;
@@ -27,7 +28,17 @@ public class SpawnerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time > contador + CalcularSpawnRate())
+        bool hayGordo = false;
+        GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+        foreach (GameObject g in enemigos)
+        {
+            if (g.name.Contains("Gordo"))
+            {
+                hayGordo = true;
+                break;
+            }
+        }
+        if (Time.time > contador + CalcularSpawnRate() && !hayGordo)
         {
             SpawnEnemigo();
             contador = Time.time;
@@ -45,18 +56,20 @@ public class SpawnerController : MonoBehaviour
         float enemigo = Random.Range(0, 101);
         Debug.Log("Enemigo: " + enemigo);
 
-        if (enemigo < demonioSpawnRate) // 60% de probabilidad
+        if (GameManager.instancia.GetPuntuacion() >= gordoUltimoSpawn + gordoPuntuacion && GameManager.instancia.GetPuntuacion() >= gordoPuntuacion)
         {
-            Instantiate(demonioPrefab, spawnPoint, Quaternion.identity);
+            Instantiate(gordoPrefab, spawnPoint, Quaternion.identity);
+            gordoUltimoSpawn = GameManager.instancia.GetPuntuacion();
         }
-        else if (enemigo < avispaSpawnRate) // 30% de probabilidad
+        else if (enemigo > avispaSpawnRate && GameManager.instancia.GetPuntuacion() >= 20) // 30% de probabilidad
         {
             Instantiate(avispaPrefab, spawnPoint, Quaternion.identity);
         }
-        else // 10% de probabilidad
+        else
         {
-            Instantiate(gordoPrefab, spawnPoint, Quaternion.identity);
+            Instantiate(demonioPrefab, spawnPoint, Quaternion.identity);
         }
+        Debug.Log("Puntuacion: " + GameManager.instancia.GetPuntuacion());
 
     }
     /*

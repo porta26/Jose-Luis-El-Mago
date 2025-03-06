@@ -24,7 +24,6 @@ public class JugadorController : MonoBehaviour
     float cooldownTorreCounter = 0;
     [SerializeField] float projectileSpeed = 10.0f;
     [SerializeField] float projectileLife = 2.0f;
-    [SerializeField] float vidas = 3;
     [SerializeField] Camera mainCamera;
     Rigidbody2D rb;
     bool isGrounded = false; // Variable para saber si el jugador está en el suelo
@@ -99,10 +98,10 @@ public class JugadorController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemigo") && !inmune)
         {
-            vidas--;
-            Debug.Log("Daño, Vidas restantes: " + vidas);
+            GameManager.instancia.SetVidas(GameManager.instancia.GetVidas() - 1);
+            Debug.Log("Daño, Vidas restantes: " + GameManager.instancia.GetVidas());
             StartCoroutine(PerderVida());
-            if (vidas <= 0)
+            if (GameManager.instancia.GetVidas() <= 0)
             {
                 Destroy(gameObject);
             }
@@ -112,10 +111,10 @@ public class JugadorController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyDamage"))
         {
-            vidas--;
-            Debug.Log("Daño, Vidas restantes: " + vidas);
+            GameManager.instancia.SetVidas(GameManager.instancia.GetVidas() - 1);
+            Debug.Log("Daño, Vidas restantes: " + GameManager.instancia.GetVidas());
             StartCoroutine(PerderVida());
-            if (vidas <= 0)
+            if (GameManager.instancia.GetVidas() <= 0)
             {
                 Destroy(gameObject);
             }
@@ -203,4 +202,5 @@ public class JugadorController : MonoBehaviour
         sp.enabled = true;
         inmune = false;
     }
+
 }

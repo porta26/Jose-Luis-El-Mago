@@ -167,4 +167,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gordoSpeed: 1
-  vida: 15
+  vida: 10
+  puntuacion: 5
