@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 492cae63174b7ae78ba910d3b74b675e
+guid: a8eafe9682e82e96ca7df040fdbb1210
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5095469082599066051
-    second: portal 1_0
+      213: 5831058147001661308
+    second: primario_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: portal 1_0
+      name: primario_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3672b7cdd14949b0800000000000000
-      internalID: -5095469082599066051
+      spriteID: c777eac8d741ce050800000000000000
+      internalID: 5831058147001661308
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      portal 1_0: -5095469082599066051
+      primario_0: 5831058147001661308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

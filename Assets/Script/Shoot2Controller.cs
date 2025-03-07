@@ -8,7 +8,10 @@ public class Shoot2Controller : MonoBehaviour
     private SpriteRenderer sp;
     private CircleCollider2D cc;
     [SerializeField] float explosionTime;
+    [SerializeField] float explosionTamaño = 3;
+    [SerializeField] Sprite spriteExplosion;
     [SerializeField] Light2D lightShoot;
+    bool escalo = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,15 +29,24 @@ public class Shoot2Controller : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (!escalo)
+        {
             rb.mass = 0;
             rb.gravityScale = 0;
             rb.linearVelocity = Vector2.zero;
             Destroy(gameObject, explosionTime);
-            transform.localScale = new Vector3(2, 2, 0);
-            transform.localScale = new Vector3(2, 2, 1f);
+            transform.localScale *= explosionTamaño;
             CambiarRadio(1, 3);
-            sp.color = Color.yellow;
-        
+
+            sp.sprite = spriteExplosion;
+            Vector2[] puntos = GetComponent<PolygonCollider2D>().points;
+            for (int i = 0; i < puntos.Length; i++)
+            {
+                puntos[i] *= explosionTamaño;
+            }
+            GetComponent<PolygonCollider2D>().points = puntos;
+            escalo = true;
+        }
     }
     public void CambiarRadio(float radioInterior, float radioExterior)
     {
