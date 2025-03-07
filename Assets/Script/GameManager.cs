@@ -63,11 +63,19 @@ public class GameManager : MonoBehaviour
             if (pausa)
             {
                 textoPausa.enabled = !textoPausa.enabled;
+                menu.interactable = !menu.interactable;
+                menuText.enabled = !menuText.enabled;
+                reintentar.interactable = !reintentar.interactable;
+                reintentarText.enabled = !reintentarText.enabled;
                 Time.timeScale = 0;
             }
             else
             {
                 textoPausa.enabled = !textoPausa.enabled;
+                menu.interactable = !menu.interactable;
+                menuText.enabled = !menuText.enabled;
+                reintentar.interactable = !reintentar.interactable;
+                reintentarText.enabled = !reintentarText.enabled;
                 Time.timeScale = 1;
             }
         }

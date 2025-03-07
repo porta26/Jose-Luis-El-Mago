@@ -42,7 +42,7 @@ public class AvispaController : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             Debug.Log("Dispara y se mueve");
-            GameObject proyectil = Instantiate(disparo, transform.position, Quaternion.identity);
+            GameObject proyectil = Instantiate(disparo, transform.position, Quaternion.Euler(0, 0, 90));
             Vector3 direccion = ObjetivoDisparo() - transform.position;
             Rigidbody2D rbProyectil = proyectil.GetComponent<Rigidbody2D>();
             if (rbProyectil != null)

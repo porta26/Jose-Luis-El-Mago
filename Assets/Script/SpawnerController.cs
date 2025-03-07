@@ -58,7 +58,12 @@ public class SpawnerController : MonoBehaviour
 
         if (GameManager.instancia.GetPuntuacion() >= gordoUltimoSpawn + gordoPuntuacion && GameManager.instancia.GetPuntuacion() >= gordoPuntuacion)
         {
-            Instantiate(gordoPrefab, spawnPoint, Quaternion.identity);
+            GameObject gordo = Instantiate(gordoPrefab, spawnPoint, Quaternion.identity);
+            if (spawnPoint.x > 0)
+            {
+                gordo.GetComponent<GordoController>().CambiarMovimiento();
+            }
+            
             gordoUltimoSpawn = GameManager.instancia.GetPuntuacion();
         }
         else if (enemigo > avispaSpawnRate && GameManager.instancia.GetPuntuacion() >= 20) // 30% de probabilidad
