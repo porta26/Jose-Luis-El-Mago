@@ -1,6 +1,6 @@
 # José Luis, El Mago
 
-**José Luis, El Mago** es un juego de acción basado en oleadas, inspirado en juegos como *Vampire Survivors* y *Dome Keeper*. Con elementos Rogue-like, el jugador controla a José Luis, un poderoso mago que debe enfrentarse a oleadas interminables de enemigos en un mundo lleno de magia y caos. Cada partida es única, y la dificultad aumenta con cada oleada que sobrevives, manteniéndote siempre en tensión.
+**José Luis, El Mago** es un juego de acción basado en oleadas, inspirado en juegos como *Vampire Survivors*. Con elementos Rogue-like, el jugador controla a José Luis, un poderoso mago que debe enfrentarse a oleadas interminables de enemigos en un mundo lleno de magia y caos. Cada partida es única, y la dificultad aumenta con cada oleada que sobrevives, manteniéndote siempre en tensión.
 
 Este juego ha sido desarrollado íntegramente por **Daniel Portasany Codina**.
 
@@ -27,11 +27,14 @@ Este juego ha sido desarrollado íntegramente por **Daniel Portasany Codina**.
 ## Uso
 
 Para ejecutar el juego, abre el archivo `MainScene` en Unity y haz clic en el botón "Play" dentro del editor.
+Usa este enlace para la versión online: https://play.unity.com/en/games/1c4707e8-2537-47a8-8a12-d9812f694b92/jose-luis-el-mago
 
 ### Controles:
 - **Teclas de dirección / WASD**: Mover a José Luis.
 - **Espacio**: Saltar.
 - **Ratón**: Apuntar y lanzar hechizos.
+- **E**: Escudo
+- **CTRL**: Torre
 - **Esc**: Pausar el juego.
 
 ## Contribuciones
@@ -41,9 +44,7 @@ Este es un proyecto personal, pero si deseas contribuir, no dudes en hacer un fo
 ## Créditos
 
 - **Desarrollador principal**: Daniel Portasany Codina
-- **Música**: [Nombre del compositor] (si aplica)
-- **Efectos sonoros**: [Fuente de efectos sonoros] (si aplica)
-- **Gráficos**: Daniel Portasany Codina (si aplica)
+- **Gráficos**: Daniel Portasany Codina
 
 ---
 
